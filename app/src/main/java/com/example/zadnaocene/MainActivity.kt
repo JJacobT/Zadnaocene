@@ -41,7 +41,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.wyswietl).setOnClickListener {
             findViewById<TextView>(R.id.wynik).text = findViewById<TextInputEditText>(R.id.poletekst).text.toString()
         }
-
+        findViewById<Button>(R.id.dodipol).setOnClickListener{
+            findViewById<TextView>(R.id.wynik).text =
+                findViewById<TextView>(R.id.wynik).text.toString() + findViewById<TextInputEditText>(R.id.poletekst).text.toString()
+        }
 
     }
 
