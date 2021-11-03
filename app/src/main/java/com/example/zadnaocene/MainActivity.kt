@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import com.example.zadnaocene.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputEditText
@@ -45,7 +46,12 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.wynik).text =
                 findViewById<TextView>(R.id.wynik).text.toString() + findViewById<TextInputEditText>(R.id.poletekst).text.toString()
         }
-
+        findViewById<Button>(R.id.suma).setOnClickListener {
+            liczbapierwsza = findViewById<EditText>(R.id.podaj1).text.toString().toInt()
+            liczbadruga = findViewById<EditText>(R.id.podaj2).text.toString().toInt()
+            suma = liczbapierwsza + liczbadruga
+            findViewById<TextView>(R.id.wynik).text = liczbapierwsza.toString() + "+" + liczbadruga + "=" + suma.toString()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
